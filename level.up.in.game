@@ -1,0 +1,27 @@
+import pygame
+import sys
+
+pygame.init()
+
+screen_width, screen_height = 800, 600
+screen = pygame.display.set_mode((screen_width, screen_height))
+pygame.display.set_caption("Game with Background Image and Sound")
+
+background = pygame.image.load("background.jpg")  # Replace with your image file
+background = pygame.transform.scale(background, (screen_width, screen_height))
+
+pygame.mixer.music.load("background_music.mp3")  # Replace with your music file
+pygame.mixer.music.play(-1)  # Loop indefinitely
+
+running = True
+while running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+
+    screen.blit(background, (0, 0))
+
+    pygame.display.flip()
+
+pygame.quit()
+sys.exit()
