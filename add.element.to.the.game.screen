@@ -1,0 +1,38 @@
+import pygame
+import sys
+
+pygame.init()
+
+WIDTH, HEIGHT = 800, 600
+screen = pygame.display.set_mode((WIDTH, HEIGHT))
+pygame.display.set_caption("Game Screen with Rectangle and Text")
+
+WHITE = (255, 255, 255)
+BLUE = (0, 0, 255)
+BLACK = (0, 0, 0)
+
+font = pygame.font.SysFont(None, 48)
+text = font.render("Hello, Pygame!", True, BLACK)
+text_rect = text.get_rect(center=(WIDTH // 2, HEIGHT // 4))
+
+rect_width, rect_height = 200, 100
+rect_x, rect_y = (WIDTH - rect_width) // 2, (HEIGHT - rect_height) // 2
+rect = pygame.Rect(rect_x, rect_y, rect_width, rect_height)
+
+running = True
+while running:
+    screen.fill(WHITE)  # Fill background
+
+    pygame.draw.rect(screen, BLUE, rect)
+
+    # Draw text
+    screen.blit(text, text_rect)
+
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+
+    pygame.display.flip()  # Update display
+
+pygame.quit()
+sys.exit()
