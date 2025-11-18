@@ -1,0 +1,10 @@
+# Define two sets of seats
+seats_A = {"A1", "A2", "A3", "A4"}
+seats_B = {"A3", "A4", "B1", "B2"}
+
+# Compute symmetric difference
+symmetric_diff = seats_A.symmetric_difference(seats_B)
+
+# Display the result
+print("Seats in either set but not both:", symmetric_diff)
+Seats in either set but not both: {'A1', 'A2', 'B1', 'B2'}
