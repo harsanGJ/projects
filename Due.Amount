@@ -1,0 +1,15 @@
+# Get user input
+total_bill = float(input("Enter the total bill amount: "))
+amount_paid = float(input("Enter the amount paid by the customer: "))
+
+# Calculate due amount
+due_amount = total_bill - amount_paid
+
+# Display result
+if due_amount > 0:
+    print(f"Customer still owes ₹{due_amount:.2f}")
+elif due_amount == 0:
+    print("Bill fully paid. No due amount.")
+else:
+    print(f"Customer overpaid by ₹{-due_amount:.2f}")
+Customer still owes ₹200.00
