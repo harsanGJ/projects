@@ -1,0 +1,32 @@
+import random
+import string
+
+def generate_password(length=12):
+    if length < 6:
+        raise ValueError("Password length should be at least 6 characters.")
+
+    # Define character pools
+    lower = string.ascii_lowercase
+    upper = string.ascii_uppercase
+    digits = string.digits
+
+    # Ensure password has at least one character from each pool
+    password = [
+        random.choice(lower),
+        random.choice(upper),
+        random.choice(digits)
+    ]
+
+    # Fill the rest of the password length with random choices from all pools
+    all_chars = lower + upper + digits
+    password += random.choices(all_chars, k=length - len(password))
+
+    # Shuffle the password list to avoid predictable patterns
+    random.shuffle(password)
+
+    # Convert list to string
+    return ''.join(password)
+
+
+# Example usage
+print("Generated Password:", generate_password(12))
