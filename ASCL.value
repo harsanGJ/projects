@@ -1,0 +1,9 @@
+# Get user input
+char = input("Enter a character: ")
+
+# Ensure only one character is entered
+if len(char) != 1:
+    print("Please enter exactly one character.")
+else:
+    ascii_value = ord(char)
+    print(f"The ASCII value of '{char}' is: {ascii_value}")
