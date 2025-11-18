@@ -1,0 +1,12 @@
+import math
+
+# Get user input
+number = float(input("Enter a number: "))
+
+# Check for non-negative input
+if number < 0:
+    print("Square root of a negative number is not defined in real numbers.")
+else:
+    sqrt = math.sqrt(number)
+    print(f"The square root of {number} is: {sqrt}")
+The square root of 25.0 is: 5.0
