@@ -1,0 +1,19 @@
+# Get user input
+decimal = int(input("Enter a decimal number: "))
+
+# Convert to binary using built-in function
+binary = bin(decimal)[2:]  # [2:] removes the '0b' prefix
+
+# Display result
+print(f"Binary representation of {decimal} is: {binary}")
+Binary representation of 25 is: 11001
+def decimal_to_binary(n):
+    binary = ""
+    while n > 0:
+        binary = str(n % 2) + binary
+        n = n // 2
+    return binary or "0"
+
+# Example usage
+num = int(input("Enter a decimal number: "))
+print(f"Binary of {num} is: {decimal_to_binary(num)}")
