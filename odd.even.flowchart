@@ -1,0 +1,25 @@
+import matplotlib.pyplot as plt
+
+# Sample range of numbers
+numbers = list(range(1, 21))
+
+# Determine odd/even status
+labels = ['Even' if num % 2 == 0 else 'Odd' for num in numbers]
+colors = ['blue' if label == 'Even' else 'red' for label in labels]
+
+# Plotting
+plt.figure(figsize=(10, 2))
+plt.scatter(numbers, [1]*len(numbers), c=colors, s=100)
+
+# Annotate each point
+for i, num in enumerate(numbers):
+    plt.text(num, 1.05, f'{num} ({labels[i]})', ha='center', fontsize=8)
+
+# Styling
+plt.yticks([])
+plt.title('Odd or Even Chart')
+plt.xlabel('Numbers')
+plt.grid(False)
+plt.box(False)
+
+plt.show()
