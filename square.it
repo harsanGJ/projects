@@ -1,0 +1,18 @@
+# Get user input for range
+start = int(input("Enter the start of the range: "))
+end = int(input("Enter the end of the range: "))
+
+# Generate list of square values using list comprehension
+squares = [x**2 for x in range(start, end + 1)]
+
+# Separate odd and even squares
+even_squares = [sq for sq in squares if sq % 2 == 0]
+odd_squares = [sq for sq in squares if sq % 2 != 0]
+
+# Display results
+print("All square values:", squares)
+print("Even square values:", even_squares)
+print("Odd square values:", odd_squares)
+All square values: [1, 4, 9, 16, 25]
+Even square values: [4, 16]
+Odd square values: [1, 9, 25]
