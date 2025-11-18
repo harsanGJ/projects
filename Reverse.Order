@@ -1,0 +1,12 @@
+# Get user input
+number = input("Enter a number: ")
+
+# Remove any negative sign or decimal point
+cleaned_number = number.replace("-", "").replace(".", "")
+
+# Count digits
+digit_count = len(cleaned_number)
+
+# Display result
+print(f"Total number of digits: {digit_count}")
+Total number of digits: 5
